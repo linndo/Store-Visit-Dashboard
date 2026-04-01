@@ -1,13 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import VisitCards from './components/VisitCards.vue'
+</script>
 
 <template>
   <header class="header">
     <h1 class="title">Store Visit Dashboard</h1>
   </header>
   <main class="main">
-    <div>
-      *Placeholder*
-    </div>
+    <VisitCards />
   </main>
 </template>
 
