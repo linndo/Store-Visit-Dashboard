@@ -7,7 +7,6 @@ interface Props {
 
 defineProps<Props>()
 
-// Optional: format date nicely
 function formatDate(dateStr: string) {
   const date = new Date(dateStr)
   return date.toLocaleString('de-DE', {
@@ -18,10 +17,11 @@ function formatDate(dateStr: string) {
     minute: '2-digit',
   })
 }
+
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" :class="visit.status">
     <h2>Store Name: {{ visit.store }} ({{ visit.city }})</h2>
     <p>Rep Name: {{ visit.rep }}</p>
     <p>Status: {{ visit.status }}</p>
@@ -36,5 +36,21 @@ function formatDate(dateStr: string) {
   border: 1px solid #103166;
   border-radius: 5px;
   text-align: center;
+}
+
+.completed {
+  background-color: #d4edda;
+}
+
+.in_progress {
+  background-color: #fff3cd;
+}
+
+.pending {
+  background-color: #d1ecf1;
+}
+
+.cancelled {
+  background-color: #f8d7da;
 }
 </style>
